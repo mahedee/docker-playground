@@ -124,6 +124,39 @@ For Linux container
 $ docker run --rm -it -v ${PWD}:/api -p 6060:80 mcr.microsoft.com/dotnet/core/aspnet:3.1      
 ```
 
+* Build a docker file 
+```
+Syntax:
+$ docker build -t <any tag name> directory
+Example:
+$ docker build -t aspnetcore/generator .   
+Explanation: 
+Here aspnetcore/generator is tag name and '.' means current directory
+```
+
+* Run a docker file 
+```
+Syntax:
+$ docker run --rm -it -p <host port>:<image port> <any tag name>
+Example:
+$ docker run --rm -it -p 8777:80 test2  
+Explanation: 
+Here test2 is tag name of the image which already running
+```
+
+* To remove/stop all images 
+```
+Syntax:
+$ docker image prune -a
+```
+
+* Login to docker and push an image
+```
+$ docker login 
+$ docker push mahedee/simpleapi  
+Explanation: 
+Here mahedee/simpleapi is the tag name of the image
+```
 #### Power shell command 
 * To see list of files
 ```powershell
