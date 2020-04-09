@@ -157,6 +157,20 @@ $ docker push mahedee/simpleapi
 Explanation: 
 Here mahedee/simpleapi is the tag name of the image
 ```
+
+* Setting the API Port with an Environment Variable inside a containerr
+```
+$ export ASPNETCORE_URLS=http://+:80
+```
+* To see docker event in json format
+```
+$ docker events --format '{{json .}}'
+
+Tips:
+Run this command in another windows
+```
+
+
 #### Power shell command 
 * To see list of files
 ```powershell
