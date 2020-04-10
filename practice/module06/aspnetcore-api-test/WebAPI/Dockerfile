@@ -1,23 +1,27 @@
-#FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
-#FROM mcr.microsoft.com/dotnet/core/runtime:3.1
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1
-WORKDIR /WebAPI
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
+WORKDIR /app
+EXPOSE 80
 
-# Copy all to the current directory
-# Here first '.' means all and second '.' means current directory
-# Here '/api' is the current directory
-COPY . .
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+WORKDIR /src
 
-# Now we are in /api directory
+#COPY . .
 
-# Restore dotnet application
-RUN dotnet restore
+COPY ["WebAPI.csproj", "WebAPI/"] 
+#
+#COPY ["WebAPI/WebAPI.csproj", "WebAPI/"]
 
-# Publish dotnet application and set output directory as publish
-RUN dotnet publish -o /publish 
-#RUN dotnet publish
-# COPY bin/Debug/netcoreapp3.1/publish .
-# Configure the container to be run as executable
+RUN dotnet restore "WebAPI/WebAPI.csproj"
+COPY . ./WebAPI
+WORKDIR "/src/WebAPI"
+RUN dotnet build "WebAPI.csproj" -c Release -o /app/build
+#
+FROM build AS publish
+RUN dotnet publish "WebAPI.csproj" -c Release -o /app/publish
+#
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "WebAPI.dll"]
 
-ENTRYPOINT [ "dotnet", "/publish/WebAPI.dll" ]
 

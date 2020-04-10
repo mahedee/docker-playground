@@ -188,3 +188,4 @@ $echo hello > hello.txt
 * [Docker Images and Containers for ASP.NET Core](https://app.pluralsight.com/library/courses/docker-images-containers-aspdotnet-core/table-of-contents)
 * https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-3.1
 * https://github.com/dotnet/dotnet-docker/blob/master/samples/README.md
+* https://docs.microsoft.com/en-us/visualstudio/containers/container-build?view=vs-2019
