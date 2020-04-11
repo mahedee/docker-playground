@@ -27,6 +27,14 @@ $ dotnet publish
 ```
 $ dotnet --version
 ```
+* To install dotnet package
+```
+Syntax:
+$ dotnet add package <PackageName> 
+Example:
+$ dotnet add package MailKit 
+```
+Tips: run command from project's directory
 ### Docker commands
 
 * Docker version 
@@ -169,8 +177,31 @@ $ docker events --format '{{json .}}'
 Tips:
 Run this command in another windows
 ```
+* To run docker compose file
+```
+$ docker-compose up
+```
 
+* To detach docker compose file
+```
+$ docker-compose up -d
+```
 
+* To see the log while running docker compose file
+```
+$ docker-compose logs -f
+```
+* Stop and remove containers, networks, images, and volumes
+```
+$ docker-compose down
+```
+
+* Remove one or more images
+```
+$ docker image rm <repository>:<tag>
+Example:
+$ docker image rm mahedee/webapi:build
+```
 #### Power shell command 
 * To see list of files
 ```powershell
