@@ -71,6 +71,13 @@ $ docker exec -ti my_container sh -c "echo a && echo b"
 or 
 $ docker exec -ti my_container sh -c "dir"
 ```
+* To run bash in a container 
+```
+Syntax:
+$ docker exec -it <container id> bas
+Example:
+$ docker exec -it 2f7 bash
+```
 * To run docker composer
 ```
 $ docker-compose up
@@ -215,8 +222,10 @@ $echo hello > hello.txt
 
 
 ### References 
-* https://docs.docker.com/engine/reference/commandline/docker/
+* [Defining your multi-container application with docker-compose.yml](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/multi-container-applications-docker-compose)
+* [Docker base commands](https://docs.docker.com/engine/reference/commandline/docker/)
 * [Docker Images and Containers for ASP.NET Core](https://app.pluralsight.com/library/courses/docker-images-containers-aspdotnet-core/table-of-contents)
+* [Tutorial: Create a multi-container app with Docker Compose](https://docs.microsoft.com/en-us/visualstudio/containers/tutorial-multicontainer?view=vs-2019)
 * https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-3.1
 * https://github.com/dotnet/dotnet-docker/blob/master/samples/README.md
 * https://docs.microsoft.com/en-us/visualstudio/containers/container-build?view=vs-2019

@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  apicompose:
+    image: ${DOCKER_REGISTRY-}apicompose
+    build:
+      context: .
+      dockerfile: ApiCompose/Dockerfile
