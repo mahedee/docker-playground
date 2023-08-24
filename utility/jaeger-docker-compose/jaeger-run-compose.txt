@@ -1,0 +1,3 @@
+docker-compose -f .\jaeger.yml up
+
+http://localhost:16686/search
