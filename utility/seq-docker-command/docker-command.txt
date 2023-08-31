@@ -1,0 +1,4 @@
+docker run --name seq -d --restart unless-stopped -e ACCEPT_EULA=Y -p 6171:80 datalust/seq:latest
+
+
+URL: http://localhost:6171/#/events
